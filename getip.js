@@ -1,17 +1,17 @@
-fetch('https://webapi-pc.meitu.com/common/ip_location')
+fetch('https://api.vore.top/api/IPdata')
     .then(response => response.json())
     .then(data => {
-        const ip = Object.keys(data.data)[0];
-        const locationData = data.data[ip];
-        const province = locationData.province;
-        const city = locationData.city;
-        const area_code = locationData.area_code;
-        const nation = locationData.nation;
+        const ip = data.ipinfo.text;
+        const province = data.ipdata.info1;
+        const city = data.ipdata.info2;
+        const isp = data.ipdata.isp;
+        const area_code = data.ipinfo.cnip;
+        const nation = data.ipdata.info1;
         let welcomeMessage;
-        if (area_code === '86' ) {
-            welcomeMessage = `欢迎${province}${city}（IP：${ip}）的小伙伴访问本站`;
+        if (area_code) {
+            welcomeMessage = `欢迎${province}${city}${isp} (IP: ${ip}) 的小伙伴访问本站`;
         } else {
-            welcomeMessage = `Welcome to visit our website from ${nation} (IP: ${ip})`;
+            welcomeMessage = `欢迎${nation}${isp} (IP: ${ip}) 的小伙伴访问本站`;
         }
         document.getElementById('welcome').textContent = welcomeMessage;
     })

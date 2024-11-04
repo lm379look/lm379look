@@ -1,6 +1,3 @@
-- 部分静态文件存储仓库
+本仓库已经整体迁移到 [https://github.com/lm379/lm379-alist/](https://github.com/lm379/lm379-alist/) 的 `assets` 目录下
 
-<!---
-lm379look/lm379look is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+后续不再更新
